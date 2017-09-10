@@ -1,8 +1,8 @@
 <?php
 
-namespace Awok\Authorization;
+namespace Glumen\Authorization;
 
-use Awok\Authorization\Gateway\Kong\Auth;
+use Glumen\Authorization\Gateway\Kong\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AuthorizationServiceProvider extends ServiceProvider

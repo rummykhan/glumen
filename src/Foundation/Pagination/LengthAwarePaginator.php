@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Foundation\Pagination;
+namespace Glumen\Foundation\Pagination;
 
 class LengthAwarePaginator extends \Illuminate\Pagination\LengthAwarePaginator
 {

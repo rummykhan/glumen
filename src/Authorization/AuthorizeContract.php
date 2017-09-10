@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Authorization;
+namespace Glumen\Authorization;
 
 interface AuthorizeContract
 {

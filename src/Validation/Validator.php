@@ -1,7 +1,7 @@
 <?php
-namespace Awok\Validation;
+namespace Glumen\Validation;
 
-use Awok\Foundation\Exceptions\InvalidInputException;
+use Glumen\Foundation\Exceptions\InvalidInputException;
 
 /**
  * Base Validator class, to be extended by specific validators.

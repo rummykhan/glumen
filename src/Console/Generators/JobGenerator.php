@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Console\Generators;
+namespace Glumen\Console\Generators;
 
 use Exception;
 use Illuminate\Support\Str;

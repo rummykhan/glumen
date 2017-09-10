@@ -1,5 +1,5 @@
 <?php
-namespace Awok\Foundation\Traits;
+namespace Glumen\Foundation\Traits;
 
 use ArrayAccess;
 use Exception;

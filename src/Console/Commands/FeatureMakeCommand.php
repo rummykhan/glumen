@@ -1,8 +1,8 @@
 <?php
 
-namespace Awok\Console\Commands;
+namespace Glumen\Console\Commands;
 
-use Awok\Console\Generators\FeatureGenerator;
+use Glumen\Console\Generators\FeatureGenerator;
 use Exception;
 use Illuminate\Console\Command;
 

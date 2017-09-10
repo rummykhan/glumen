@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Foundation\Http;
+namespace Glumen\Foundation\Http;
 
 /**
  * Class RequestSort

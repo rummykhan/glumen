@@ -1,8 +1,8 @@
 <?php
 
-namespace Awok\Authorization\Middleware;
+namespace Glumen\Authorization\Middleware;
 
-use Awok\Authorization\Exceptions\UnauthorizedAccess;
+use Glumen\Authorization\Exceptions\UnauthorizedAccess;
 
 class RoleMiddleware
 {

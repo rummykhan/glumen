@@ -1,11 +1,11 @@
 <?php
 
-namespace Awok\Domains\Data\Jobs;
+namespace Glumen\Domains\Data\Jobs;
 
-use Awok\Domains\Data\Traits\EloquentRequestQueryable;
-use Awok\Foundation\Http\Request;
-use Awok\Foundation\Http\RequestFilterCollection;
-use Awok\Foundation\Job;
+use Glumen\Domains\Data\Traits\EloquentRequestQueryable;
+use Glumen\Foundation\Http\Request;
+use Glumen\Foundation\Http\RequestFilterCollection;
+use Glumen\Foundation\Job;
 
 class FindEloquentObjectFromRequestJob extends Job
 {

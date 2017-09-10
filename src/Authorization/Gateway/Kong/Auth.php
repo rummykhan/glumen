@@ -1,9 +1,9 @@
 <?php
 
-namespace Awok\Authorization\Gateway\Kong;
+namespace Glumen\Authorization\Gateway\Kong;
 
 use App\Data\Models\User;
-use Awok\Authorization\Gateway\Contracts\AuthContract;
+use Glumen\Authorization\Gateway\Contracts\AuthContract;
 use Illuminate\Http\Request;
 
 /**

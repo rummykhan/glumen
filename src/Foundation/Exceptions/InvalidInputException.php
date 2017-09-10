@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Foundation\Exceptions;
+namespace Glumen\Foundation\Exceptions;
 
 /**
  * Class ValidationFailedException

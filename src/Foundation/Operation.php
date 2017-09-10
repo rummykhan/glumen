@@ -1,8 +1,8 @@
 <?php
-namespace Awok\Foundation;
+namespace Glumen\Foundation;
 
-use Awok\Foundation\Traits\JobDispatcherTrait;
-use Awok\Foundation\Traits\MarshalTrait;
+use Glumen\Foundation\Traits\JobDispatcherTrait;
+use Glumen\Foundation\Traits\MarshalTrait;
 
 abstract class Operation
 {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Awok\Foundation\Providers;
+namespace Glumen\Foundation\Providers;
 
-use Awok\Console\Commands\ControllerMakeCommand;
-use Awok\Console\Commands\CrudMakeCommand;
-use Awok\Console\Commands\FeatureMakeCommand;
-use Awok\Console\Commands\JobMakeCommand;
-use Awok\Console\Commands\ModelMakeCommand;
-use Awok\Console\Commands\OperationMakeCommand;
-use Awok\Console\Commands\ValidatorMakeCommand;
-use Awok\Foundation\Exceptions\Handler\JsonExceptionsHandler;
+use Glumen\Console\Commands\ControllerMakeCommand;
+use Glumen\Console\Commands\CrudMakeCommand;
+use Glumen\Console\Commands\FeatureMakeCommand;
+use Glumen\Console\Commands\JobMakeCommand;
+use Glumen\Console\Commands\ModelMakeCommand;
+use Glumen\Console\Commands\OperationMakeCommand;
+use Glumen\Console\Commands\ValidatorMakeCommand;
+use Glumen\Foundation\Exceptions\Handler\JsonExceptionsHandler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Support\ServiceProvider;
 

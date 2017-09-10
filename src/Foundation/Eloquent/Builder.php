@@ -1,7 +1,7 @@
 <?php
-namespace Awok\Foundation\Eloquent;
+namespace Glumen\Foundation\Eloquent;
 
-use Awok\Foundation\Pagination\LengthAwarePaginator;
+use Glumen\Foundation\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 
 class Builder extends \Illuminate\Database\Eloquent\Builder

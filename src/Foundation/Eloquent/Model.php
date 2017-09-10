@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Foundation\Eloquent;
+namespace Glumen\Foundation\Eloquent;
 
 class Model extends \Illuminate\Database\Eloquent\Model
 {

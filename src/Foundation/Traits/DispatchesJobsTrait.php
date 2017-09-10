@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Foundation\Traits;
+namespace Glumen\Foundation\Traits;
 
 trait DispatchesJobsTrait
 {

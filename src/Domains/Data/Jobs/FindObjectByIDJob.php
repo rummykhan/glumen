@@ -1,8 +1,8 @@
 <?php
 
-namespace Awok\Domains\Data\Jobs;
+namespace Glumen\Domains\Data\Jobs;
 
-use Awok\Foundation\Job;
+use Glumen\Foundation\Job;
 
 class FindObjectByIDJob extends Job
 {

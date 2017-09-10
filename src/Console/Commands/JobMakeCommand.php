@@ -1,8 +1,8 @@
 <?php
 
-namespace Awok\Console\Commands;
+namespace Glumen\Console\Commands;
 
-use Awok\Console\Generators\JobGenerator;
+use Glumen\Console\Generators\JobGenerator;
 use Exception;
 use Illuminate\Console\Command;
 

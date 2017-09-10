@@ -1,9 +1,9 @@
 <?php
 
-namespace Awok\Domains\Http\Jobs;
+namespace Glumen\Domains\Http\Jobs;
 
-use Awok\Foundation\Http\Request;
-use Awok\Foundation\Job;
+use Glumen\Foundation\Http\Request;
+use Glumen\Foundation\Job;
 
 class InputFilterJob extends Job
 {

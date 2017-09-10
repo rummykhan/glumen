@@ -1,16 +1,16 @@
 <?php
 
-namespace Awok\Domains\Data\Traits;
+namespace Glumen\Domains\Data\Traits;
 
-use Awok\Foundation\Eloquent\Model;
-use Awok\Foundation\Http\Request;
-use Awok\Foundation\Http\RequestFieldCollection;
-use Awok\Foundation\Http\RequestFilter;
-use Awok\Foundation\Http\RequestFilterCollection;
-use Awok\Foundation\Http\RequestRelationField;
-use Awok\Foundation\Http\RequestRelationFieldCollection;
-use Awok\Foundation\Http\RequestSort;
-use Awok\Foundation\Http\RequestSortCollection;
+use Glumen\Foundation\Eloquent\Model;
+use Glumen\Foundation\Http\Request;
+use Glumen\Foundation\Http\RequestFieldCollection;
+use Glumen\Foundation\Http\RequestFilter;
+use Glumen\Foundation\Http\RequestFilterCollection;
+use Glumen\Foundation\Http\RequestRelationField;
+use Glumen\Foundation\Http\RequestRelationFieldCollection;
+use Glumen\Foundation\Http\RequestSort;
+use Glumen\Foundation\Http\RequestSortCollection;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Arr;

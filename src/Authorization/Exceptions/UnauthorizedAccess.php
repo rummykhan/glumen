@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Authorization\Exceptions;
+namespace Glumen\Authorization\Exceptions;
 
 class UnauthorizedAccess extends \Exception
 {

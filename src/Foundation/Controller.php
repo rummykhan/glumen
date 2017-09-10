@@ -1,8 +1,8 @@
 <?php
 
-namespace Awok\Foundation;
+namespace Glumen\Foundation;
 
-use Awok\Foundation\Traits\ServesFeaturesTrait;
+use Glumen\Foundation\Traits\ServesFeaturesTrait;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController

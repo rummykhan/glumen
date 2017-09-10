@@ -1,6 +1,6 @@
 <?php
 
-namespace Awok\Authorization\Gateway\Contracts;
+namespace Glumen\Authorization\Gateway\Contracts;
 
 use Illuminate\Http\Request;
 

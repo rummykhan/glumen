@@ -1,10 +1,10 @@
 <?php
 
-namespace Awok\Foundation\Exceptions\Handler;
+namespace Glumen\Foundation\Exceptions\Handler;
 
-use Awok\Domains\Http\Jobs\JsonErrorResponseJob;
-use Awok\Foundation\Traits\JobDispatcherTrait;
-use Awok\Foundation\Traits\MarshalTrait;
+use Glumen\Domains\Http\Jobs\JsonErrorResponseJob;
+use Glumen\Foundation\Traits\JobDispatcherTrait;
+use Glumen\Foundation\Traits\MarshalTrait;
 use Exception;
 use Laravel\Lumen\Exceptions\Handler;
 

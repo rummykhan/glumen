@@ -1,5 +1,5 @@
 <?php
-namespace Awok\Foundation\Http;
+namespace Glumen\Foundation\Http;
 
 class RequestRelationFieldCollection extends \SplObjectStorage
 {

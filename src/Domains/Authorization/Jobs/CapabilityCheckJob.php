@@ -1,9 +1,9 @@
 <?php
 
-namespace Awok\Domains\Authorization\Jobs;
+namespace Glumen\Domains\Authorization\Jobs;
 
-use Awok\Authorization\Exceptions\UnauthorizedAccess;
-use Awok\Foundation\Job;
+use Glumen\Authorization\Exceptions\UnauthorizedAccess;
+use Glumen\Foundation\Job;
 
 class CapabilityCheckJob extends Job
 {

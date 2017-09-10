@@ -1,8 +1,8 @@
 <?php
 
-namespace Awok\Console\Commands;
+namespace Glumen\Console\Commands;
 
-use Awok\Console\Generators\ControllerGenerator;
+use Glumen\Console\Generators\ControllerGenerator;
 use Exception;
 use Illuminate\Console\Command;
 
