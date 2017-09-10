@@ -1,16 +1,16 @@
 {
-  "name": "mander/awok-lucid",
-  "description": "Awok.com Lucid Base Repository",
+  "name": "rummykhan/glumen",
+  "description": "Glumen",
   "authors": [
     {
-      "name": "Muhammad Anwar",
-      "email": "m_anwar@awok.ae"
+      "name": "Rummy Khan",
+      "email": "rehan_manzoor@outlook.com"
     }
   ],
   "require": {},
   "autoload": {
     "psr-4": {
-      "Awok\\": "src/"
+      "Glumen\\": "src/"
     }
   }
 }
