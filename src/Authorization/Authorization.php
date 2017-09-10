@@ -2,12 +2,13 @@
 
 namespace Glumen\Authorization;
 
-use Laravel\Lumen\Application;
+use Closure;
+use Illuminate\Contracts\Container\Container as Application;
 
 class Authorization implements AuthorizeContract
 {
     /**
-     * @var \Laravel\Lumen\Application
+     * @var Application
      */
     protected $app;
 
@@ -46,7 +47,7 @@ class Authorization implements AuthorizeContract
 
     public function getUser()
     {
-        return $this->app->auth->user();
+        return $this->app->make('auth')->user();
     }
 
     public function getRoles()
@@ -54,7 +55,7 @@ class Authorization implements AuthorizeContract
         return $this->getUser()->roles;
     }
 
-    public function capableIf(\Closure $closure)
+    public function capableIf(Closure $closure)
     {
         if ($closure($this)) {
             return true;
