@@ -9,9 +9,9 @@ use Glumen\Console\Commands\JobMakeCommand;
 use Glumen\Console\Commands\ModelMakeCommand;
 use Glumen\Console\Commands\OperationMakeCommand;
 use Glumen\Console\Commands\ValidatorMakeCommand;
+use Glumen\Console\Commands\VendorPublishCommand;
 use Glumen\Foundation\Exceptions\Handler\JsonExceptionsHandler;
 use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->commands(
             [
+                VendorPublishCommand::class,
                 ControllerMakeCommand::class,
                 ModelMakeCommand::class,
                 FeatureMakeCommand::class,
