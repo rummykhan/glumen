@@ -34,6 +34,9 @@ return [
     */
 
     'guards' => [
+        'api' => [
+            'driver' => 'api'
+        ],
         'headers' => [
             'model' => App\User::class,
             'token_key' => '',
