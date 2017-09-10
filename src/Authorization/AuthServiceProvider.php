@@ -6,7 +6,7 @@ use Glumen\Authorization\Gateway\Kong\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 
-class AuthorizationServiceProvider extends ServiceProvider
+class AuthServiceProvider extends ServiceProvider
 {
     protected $authGroup = 'glumen-auth';
 
@@ -15,7 +15,7 @@ class AuthorizationServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../../config/auth.php' => $this->app->basePath() . '/config/auth.php',
         ], $this->authGroup);
-        
+
 
         $this->app->singleton('authorization', function ($app) {
             return new Authorization($app);
