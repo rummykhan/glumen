@@ -35,10 +35,10 @@ return [
 
     'guards' => [
         'api' => [
-            'driver' => 'eloquent',
+            'driver' => 'api',
             'model' => App\User::class,
-            'parameter' => 'headers', // header, request,
-            'api_token' => 'token' // anything that has token of the user.
+            'headers_key' => 'token', // Token key in request headers
+            'table_key' => 'token' // column name for token mismatch.
         ],
 
         'kong' => [
