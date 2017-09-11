@@ -35,20 +35,15 @@ return [
 
     'guards' => [
         'api' => [
-            'driver' => 'api'
-        ],
-        'headers' => [
+            'driver' => 'eloquent',
             'model' => App\User::class,
-            'token_key' => '',
+            'parameter' => 'headers', // header, request,
+            'api_token' => 'token' // anything that has token of the user.
         ],
 
         'kong' => [
             'model' => App\User::class,
+            'driver' => 'kong'
         ],
-
-        'request' => [
-            'model' => App\User::class,
-            'token_key' => '',
-        ]
     ]
 ];

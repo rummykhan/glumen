@@ -3,6 +3,7 @@
 namespace Glumen\Authorization;
 
 use Glumen\Authorization\Gateway\Kong\Auth;
+use Glumen\Foundation\Exceptions\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,49 +17,57 @@ class AuthServiceProvider extends ServiceProvider
             __DIR__ . '/../../config/auth.php' => $this->app->basePath() . '/config/auth.php',
         ], $this->authGroup);
 
-
+        // Bind Authorization to container
         $this->app->singleton('authorization', function ($app) {
             return new Authorization($app);
         });
 
-        $this->app->singleton('awok.authorization.kong.auth', function ($app) {
-            return new Auth($app);
+        $guard = $this->getDefaultGuard();
+        if (!$guard) {
+            throw new Exception(trans("No guard specified in config/auth.php"));
+        }
+
+        $config = $this->getConfig()['guards'][$guard];
+
+        // Bind Glumen Authentication to Container..
+        $this->app->singleton('glumen.auth', function ($app) use ($config) {
+            return new Auth($app, $config);
         });
     }
-
 
     public function boot()
     {
-        $this->updateConfig();
-        // Here you may define how you wish users to be authenticated for your Lumen
-        // application. The callback which receives the incoming request instance
-        // should return either a User instance or null. You're free to obtain
-        // the User instance via an API token or any other method necessary.
-        $this->app['auth']->viaRequest('api', function (Request $request) {
-            if ($request->headers->has($this->getTokenKeyInHeader())) {
-                return $this->model->where($this->getTokenKeyInHeader(), $request->headers->get($this->getTokenKey()))->first();
-            }
+        $guard = $this->getDefaultGuard();
 
-            return null;
+        if (!$guard) {
+            throw new Exception(trans("No guard specified in config/auth.php"));
+        }
+
+        $this->app['auth']->viaRequest($guard, function ($request) {
+            return $this->app->make('glumen.auth')->handle($request);
         });
     }
 
-    public function kongBoot()
+    /**
+     * Load Auth Configuration if it is lumen,
+     * In Laravel config are automatically loaded in config directory.
+     */
+    protected function configureAuth()
     {
-        $this->app['auth']->viaRequest('api', function ($request) {
-            $auth = $this->app->make(config('security.authorization_service', 'awok.authorization.kong.auth'));
-
-            return $auth->handle($request);
-        });
+        if (str_contains(app()->version(), 'Lumen')) {
+            $this->app->configure('auth');
+        }
     }
 
-    public function getTokenKeyInHeader()
+    public function getConfig()
     {
-        return 'token';
+        $this->configureAuth();
+
+        return config('auth');
     }
 
-    public function getTokenKey()
+    protected function getDefaultGuard()
     {
-        return 'token';
+        return array_get($this->getConfig(), 'defaults.guard', null);
     }
 }
