@@ -8,6 +8,7 @@ use Glumen\Console\Commands\FeatureMakeCommand;
 use Glumen\Console\Commands\JobMakeCommand;
 use Glumen\Console\Commands\ModelMakeCommand;
 use Glumen\Console\Commands\OperationMakeCommand;
+use Glumen\Console\Commands\RouteListCommand;
 use Glumen\Console\Commands\ValidatorMakeCommand;
 use Glumen\Console\Commands\VendorPublishCommand;
 
@@ -15,8 +16,7 @@ class GlumenServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->commands(
-            [
+        $this->commands([
                 ControllerMakeCommand::class,
                 ModelMakeCommand::class,
                 FeatureMakeCommand::class,
@@ -24,20 +24,22 @@ class GlumenServiceProvider extends ServiceProvider
                 JobMakeCommand::class,
                 ValidatorMakeCommand::class,
                 CrudMakeCommand::class,
-            ]
-        );
+            ]);
 
-        $this->registerVendorPublishCommand();
+        $this->registerLumenOnlyCommands();
     }
 
     /**
      * Register vendor publish command only to lumen,
      * Laravel has this command already.
      */
-    protected function registerVendorPublishCommand()
+    protected function registerLumenOnlyCommands()
     {
         if (str_contains(app()->version(), 'Lumen')) {
-            $this->commands(VendorPublishCommand::class);
+            $this->commands([
+                VendorPublishCommand::class,
+                RouteListCommand::class,
+            ]);
         }
     }
 }

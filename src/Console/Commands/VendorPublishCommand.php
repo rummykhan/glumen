@@ -52,7 +52,7 @@ class VendorPublishCommand extends Command
     /**
      * Create a new command instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
+     * @param  \Illuminate\Filesystem\Filesystem $files
      * @return void
      */
     public function __construct(Filesystem $files)
@@ -90,7 +90,8 @@ class VendorPublishCommand extends Command
         }
 
         list($this->provider, $this->tags) = [
-            $this->option('provider'), (array) $this->option('tag'),
+            $this->option('provider'),
+            (array) $this->option('tag'),
         ];
 
         if (! $this->provider && ! $this->tags) {
@@ -105,10 +106,7 @@ class VendorPublishCommand extends Command
      */
     protected function promptForProviderOrTag()
     {
-        $choice = $this->choice(
-            "Which provider or tag's files would you like to publish?",
-            $choices = $this->publishableChoices()
-        );
+        $choice = $this->choice("Which provider or tag's files would you like to publish?", $choices = $this->publishableChoices());
 
         if ($choice == $choices[0] || is_null($choice)) {
             return;
@@ -124,11 +122,7 @@ class VendorPublishCommand extends Command
      */
     protected function publishableChoices()
     {
-        return array_merge(
-            ['<comment>Publish files from all providers and tags listed below</comment>'],
-            preg_filter('/^/', '<comment>Provider: </comment>', ServiceProvider::publishableProviders()),
-            preg_filter('/^/', '<comment>Tag: </comment>', ServiceProvider::publishableGroups())
-        );
+        return array_merge(['<comment>Publish files from all providers and tags listed below</comment>'], preg_filter('/^/', '<comment>Provider: </comment>', ServiceProvider::publishableProviders()), preg_filter('/^/', '<comment>Tag: </comment>', ServiceProvider::publishableGroups()));
     }
 
     /**
@@ -151,7 +145,7 @@ class VendorPublishCommand extends Command
     /**
      * Publishes the assets for a tag.
      *
-     * @param  string  $tag
+     * @param  string $tag
      * @return mixed
      */
     protected function publishTag($tag)
@@ -164,21 +158,19 @@ class VendorPublishCommand extends Command
     /**
      * Get all of the paths to publish.
      *
-     * @param  string  $tag
+     * @param  string $tag
      * @return array
      */
     protected function pathsToPublish($tag)
     {
-        return ServiceProvider::pathsToPublish(
-            $this->provider, $tag
-        );
+        return ServiceProvider::pathsToPublish($this->provider, $tag);
     }
 
     /**
      * Publish the given item from and to the given location.
      *
-     * @param  string  $from
-     * @param  string  $to
+     * @param  string $from
+     * @param  string $to
      * @return void
      */
     protected function publishItem($from, $to)
@@ -195,8 +187,8 @@ class VendorPublishCommand extends Command
     /**
      * Publish the file to the given path.
      *
-     * @param  string  $from
-     * @param  string  $to
+     * @param  string $from
+     * @param  string $to
      * @return void
      */
     protected function publishFile($from, $to)
@@ -213,8 +205,8 @@ class VendorPublishCommand extends Command
     /**
      * Publish the directory to the given directory.
      *
-     * @param  string  $from
-     * @param  string  $to
+     * @param  string $from
+     * @param  string $to
      * @return void
      */
     protected function publishDirectory($from, $to)
@@ -230,7 +222,7 @@ class VendorPublishCommand extends Command
     /**
      * Move all the files in the given MountManager.
      *
-     * @param  \League\Flysystem\MountManager  $manager
+     * @param  \League\Flysystem\MountManager $manager
      * @return void
      */
     protected function moveManagedFiles($manager)
@@ -245,7 +237,7 @@ class VendorPublishCommand extends Command
     /**
      * Create the directory to house the published files if needed.
      *
-     * @param  string  $directory
+     * @param  string $directory
      * @return void
      */
     protected function createParentDirectory($directory)
@@ -258,9 +250,9 @@ class VendorPublishCommand extends Command
     /**
      * Write a status message to the console.
      *
-     * @param  string  $from
-     * @param  string  $to
-     * @param  string  $type
+     * @param  string $from
+     * @param  string $to
+     * @param  string $type
      * @return void
      */
     protected function status($from, $to, $type)
