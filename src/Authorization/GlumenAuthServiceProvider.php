@@ -4,7 +4,7 @@ namespace Glumen\Authorization;
 
 use Illuminate\Support\ServiceProvider;
 
-class AuthorizationServiceProvider extends ServiceProvider
+class GlumenAuthServiceProvider extends ServiceProvider
 {
 
     public function register()
