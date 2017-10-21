@@ -3,7 +3,6 @@
 namespace Glumen\Domains\Http\Jobs;
 
 use Glumen\Foundation\Exceptions\Exception;
-use Glumen\Foundation\Http\Request;
 use Glumen\Foundation\Job;
 
 class InputFilterJob extends Job
@@ -19,7 +18,7 @@ class InputFilterJob extends Job
         }
     }
 
-    public function handle(Request $request)
+    public function handle()
     {
         if (empty($this->input)) {
             return [];
