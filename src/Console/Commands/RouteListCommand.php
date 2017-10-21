@@ -40,7 +40,7 @@ class RouteListCommand extends Command
 
     protected function listRoutes(array $routes)
     {
-        $this->table(['method', 'uri', 'action'], $routes);
+        $this->table(['#', 'method', 'uri', 'action'], $routes);
     }
 
     /**
@@ -48,8 +48,11 @@ class RouteListCommand extends Command
      */
     protected function getRoutes()
     {
-        return collect(app()->getRoutes())->map(function (array $route) {
+        $counter = 0;
+
+        return collect(app()->getRoutes())->map(function (array $route) use (&$counter) {
             return array_merge(array_only($route, [
+                ++$counter,
                 static::METHOD,
                 static::URI,
             ]), $this->getAction($route[static::ACTION]));
