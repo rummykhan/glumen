@@ -13,9 +13,7 @@ class AuthServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->publishes([
-            __DIR__ . '/../../config/auth.php' => $this->app->basePath() . '/config/auth.php',
-        ], $this->authGroup);
+        $this->publishAuthConfiguration();
 
         // Bind Authorization to container
         $this->app->singleton('authorization', function ($app) {
@@ -33,6 +31,13 @@ class AuthServiceProvider extends ServiceProvider
         $this->app->singleton('glumen.auth', function ($app) use ($config) {
             return new Auth($app, $config);
         });
+    }
+
+    private function publishAuthConfiguration()
+    {
+        $this->publishes([
+            __DIR__ . '/../../config/auth.php' => $this->app->basePath() . '/config/auth.php',
+        ], $this->authGroup);
     }
 
     public function boot()
