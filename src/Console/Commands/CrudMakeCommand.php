@@ -19,7 +19,7 @@ class CrudMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:crud {singular_entity_name}';
+    protected $signature = 'glumen:crud {singular_entity_name}';
 
     /**
      * The console command description.

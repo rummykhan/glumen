@@ -13,7 +13,7 @@ class ControllerMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:controller {controller}';
+    protected $signature = 'glumen:controller {controller}';
 
     /**
      * The console command description.

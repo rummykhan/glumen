@@ -13,7 +13,7 @@ class JobMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:job {job} {domain}';
+    protected $signature = 'glumen:job {job} {domain}';
 
     /**
      * The console command description.

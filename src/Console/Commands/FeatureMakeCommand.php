@@ -13,7 +13,7 @@ class FeatureMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:feature {feature}';
+    protected $signature = 'glumen:feature {feature}';
 
     /**
      * The console command description.

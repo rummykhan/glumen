@@ -13,7 +13,7 @@ class ModelMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:model {model}';
+    protected $signature = 'glumen:model {model}';
 
     /**
      * The console command description.

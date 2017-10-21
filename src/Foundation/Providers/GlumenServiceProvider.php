@@ -10,18 +10,11 @@ use Glumen\Console\Commands\ModelMakeCommand;
 use Glumen\Console\Commands\OperationMakeCommand;
 use Glumen\Console\Commands\ValidatorMakeCommand;
 use Glumen\Console\Commands\VendorPublishCommand;
-use Glumen\Foundation\Exceptions\Handler\JsonExceptionsHandler;
-use Illuminate\Contracts\Debug\ExceptionHandler;
 
-class AppServiceProvider extends ServiceProvider
+class GlumenServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->app->singleton(
-            ExceptionHandler::class,
-            JsonExceptionsHandler::class
-        );
-
         $this->commands(
             [
                 ControllerMakeCommand::class,
@@ -43,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
      */
     protected function registerVendorPublishCommand()
     {
-        if(str_contains(app()->version(), 'Lumen')){
+        if (str_contains(app()->version(), 'Lumen')) {
             $this->commands(VendorPublishCommand::class);
         }
     }

@@ -13,7 +13,7 @@ class ValidatorMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:validator {validator} {domain}';
+    protected $signature = 'glumen:validator {validator} {domain}';
 
     /**
      * The console command description.

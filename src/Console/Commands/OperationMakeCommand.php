@@ -13,7 +13,7 @@ class OperationMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:operation {operation}';
+    protected $signature = 'glumen:operation {operation}';
 
     /**
      * The console command description.
