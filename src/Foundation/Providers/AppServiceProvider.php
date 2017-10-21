@@ -24,7 +24,6 @@ class AppServiceProvider extends ServiceProvider
 
         $this->commands(
             [
-                VendorPublishCommand::class,
                 ControllerMakeCommand::class,
                 ModelMakeCommand::class,
                 FeatureMakeCommand::class,
@@ -34,5 +33,18 @@ class AppServiceProvider extends ServiceProvider
                 CrudMakeCommand::class,
             ]
         );
+
+        $this->registerVendorPublishCommand();
+    }
+
+    /**
+     * Register vendor publish command only to lumen,
+     * Laravel has this command already.
+     */
+    protected function registerVendorPublishCommand()
+    {
+        if(str_contains(app()->version(), 'Lumen')){
+            $this->commands(VendorPublishCommand::class);
+        }
     }
 }
