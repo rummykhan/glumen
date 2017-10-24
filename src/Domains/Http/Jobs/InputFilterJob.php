@@ -11,11 +11,10 @@ class InputFilterJob extends Job
 
     protected $input = [];
 
-    public function __construct($expectedKeys = [])
+    public function __construct(array $expectedKeys = [], array $input = [])
     {
-        if (!empty($expectedKeys)) {
-            $this->expectedKeys = $expectedKeys;
-        }
+        $this->input = $input;
+        $this->expectedKeys = $expectedKeys;
     }
 
     public function handle()
