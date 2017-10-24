@@ -49,9 +49,7 @@ class RouteListCommand extends Command
      */
     protected function getRoutes()
     {
-        $counter = 0;
-
-        return collect(app()->router->getRoutes())->map(function (array $route) use (&$counter) {
+        return collect(app()->router->getRoutes())->map(function (array $route) {
             return array_merge(array_only($route, [
                 static::METHOD,
                 static::URI,

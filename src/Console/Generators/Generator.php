@@ -65,7 +65,7 @@ class Generator
 
     public function findVendorRootNameSpace()
     {
-        return 'Awok';
+        return 'Glumen';
     }
 
     public function findControllerNamespace()
