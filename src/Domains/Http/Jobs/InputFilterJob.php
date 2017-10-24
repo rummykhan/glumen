@@ -14,7 +14,12 @@ class InputFilterJob extends Job
     public function __construct(array $expectedKeys = [], array $input = [])
     {
         $this->input = $input;
-        $this->expectedKeys = $expectedKeys;
+
+        // since user can override the expected keys in child class
+        // so if it is done already we don't need to update with empty here..
+        if (! empty($expectedKeys)) {
+            $this->expectedKeys = $expectedKeys;
+        }
     }
 
     public function handle()
