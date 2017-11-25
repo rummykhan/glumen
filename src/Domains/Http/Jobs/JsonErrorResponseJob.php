@@ -28,8 +28,8 @@ class JsonErrorResponseJob extends Job
         $this->options = $options;
     }
 
-    public function handle(ResponseFactory $response)
+    public function handle()
     {
-        return $response->json($this->content, $this->status, $this->headers, $this->options);
+        return response()->json($this->content, $this->status, $this->headers, $this->options);
     }
 }
