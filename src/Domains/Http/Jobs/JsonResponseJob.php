@@ -2,7 +2,6 @@
 namespace Glumen\Domains\Http\Jobs;
 
 use Glumen\Foundation\Job;
-use Laravel\Lumen\Http\ResponseFactory;
 
 class JsonResponseJob extends Job
 {
@@ -22,13 +21,13 @@ class JsonResponseJob extends Job
         $this->options = $options;
     }
 
-    public function handle(ResponseFactory $factory)
+    public function handle()
     {
         $response = [
             'data'   => $this->content,
             'status' => $this->status,
         ];
 
-        return $factory->json($response, $this->status, $this->headers, $this->options);
+        return response()->json($response, $this->status, $this->headers, $this->options);
     }
 }
