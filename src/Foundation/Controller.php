@@ -3,7 +3,7 @@
 namespace Glumen\Foundation;
 
 use Glumen\Foundation\Traits\ServesFeaturesTrait;
-use App\Http\Controllers\Controller as BaseController;
+use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
