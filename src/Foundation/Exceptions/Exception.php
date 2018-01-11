@@ -13,11 +13,7 @@ class Exception extends \Exception
     ) {
 
         if ($message instanceof Validator) {
-            $message = $message->messages()->all();
-        }
-
-        if (is_array($message)) {
-            $message = implode("\n", $message);
+            $message = json_encode(array_merge($message->messages()->toArray(),['GlumenInputException'=>true]));
         }
 
         parent::__construct($message, $code, $previous);

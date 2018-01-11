@@ -20,7 +20,7 @@ class JsonErrorResponseJob extends Job
             'status' => $status,
             'error'  => [
                 'code'    => $code,
-                'message' => $message,
+                'message' => str_contains($message,'GlumenInputException') ? array_except(json_decode($message, true), ['GlumenInputException']) : $message,
             ],
         ];
         $this->status  = $status;
