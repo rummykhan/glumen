@@ -34,7 +34,7 @@ class Validator
     {
         $validation = $this->validation($input, $rules);
         if ($validation->fails()) {
-            throw new InvalidInputException($validation);
+            throw new InvalidInputException($validation, 422);
         }
 
         return true;
