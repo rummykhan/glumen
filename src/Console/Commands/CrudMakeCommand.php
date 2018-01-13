@@ -252,7 +252,7 @@ class CrudMakeCommand extends Command
                 "// Exclude unwanted Inputs".
                 "\n".
                 "\t\t".
-                "\$filteredInputs = \$this->run({$createInputFilterJobClassName}::class);".
+                "\$filteredInputs = \$this->run({$createInputFilterJobClassName}::class, ['input' => \$request->all()]);".
 
                 "\n\n".
                 "\t\t".
@@ -311,7 +311,7 @@ class CrudMakeCommand extends Command
                 "// Exclude unwanted Inputs".
                 "\n".
                 "\t\t".
-                "\$filteredInputs = \$this->run({$updateInputFilterJobClassName}::class);".
+                "\$filteredInputs = \$this->run({$updateInputFilterJobClassName}::class, ['input' => \$request->all()]);".
 
                 "\n\n".
                 "\t\t".
